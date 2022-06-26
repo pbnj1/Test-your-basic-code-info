@@ -13,6 +13,10 @@ let btn = document.createElement("button");
 btn.innerHTML = "Start Quiz";
 document.body.appendChild(btn);
 
+// made a timer below
+let timer = document.createElement("h2");
+var counter = 30;
+timer.innerHTML = "You have " + counter + " seconds left";
 
 //made trial question 1
 let question1 = document.createElement("h1");
@@ -64,74 +68,107 @@ ans2_3.innerHTML = "PBNJ"
 ans3_3.innerHTML = "broccoli raab"
 
 
+// var startTimer = setInterval(() => {
+    
+//     counter--;
+//   }, interval); 
+
 
 
 //made an event for the button click
 btn.addEventListener("click", function(){
 //makes the title screen dissapear
-codeTitle.style.display = "none";
-codeInstr.style.display = "none";
-btn.style.display = "none";
+    codeTitle.style.display = "none";
+    codeInstr.style.display = "none";
+    btn.style.display = "none";
+    document.body.appendChild(timer);
 //pulls up the question and answers
-document.body.appendChild(question1);
-document.body.appendChild(list1);
-document.body.appendChild(ans1);
-document.body.appendChild(ans2);
-document.body.appendChild(ans3);
+    //starting to work on counter function
 
-})
+    
+    function setTime() {
+        // Sets interval in variable
+        var timerInterval = setInterval(function() {
+          counter--;
+         
+      
+          if(counter === 0) {
+            // Stops execution of action at set interval
+            clearInterval(timerInterval);
+            // Calls function to create and append image
+            sendMessage();
+          }
+      
+        }, 1000);
+      }
+     
+
+     
+    document.body.appendChild(question1);
+    document.body.appendChild(list1);
+    document.body.appendChild(ans1);
+    document.body.appendChild(ans2);
+    document.body.appendChild(ans3);
+
+
 
 
 //applies an if/else to the answerss
-if (ans1.addEventListener("click", function(){
-alert("You answered correctly");
-question1.style.display ="none";
-ans1.style.display = "none";
-ans2.style.display = "none";
-ans3.style.display = "none";
-document.body.appendChild(question2);
-document.body.appendChild(list2);
-document.body.appendChild(ans1_2);
-document.body.appendChild(ans2_2);
-document.body.appendChild(ans3_2);
+        if (ans1.addEventListener("click", function(){
+            alert("You answered correctly");
+            question1.style.display ="none";
+            ans1.style.display = "none";
+            ans2.style.display = "none";
+            ans3.style.display = "none";
+            document.body.appendChild(question2);
+            document.body.appendChild(list2);
+            document.body.appendChild(ans1_2);
+            document.body.appendChild(ans2_2);
+            document.body.appendChild(ans3_2);
 
-    if(ans2_2.addEventListener("click",function(){
-         alert("You answered correctly");
-        question2.style.display="none";
-        ans1_2.style.display = "none";
-        ans2_2.style.display = "none";
-        ans3_2.style.display = "none";
-        document.body.appendChild(question3);
-        document.body.appendChild(list3);
-        document.body.appendChild(ans1_3);
-        document.body.appendChild(ans2_3);
-        document.body.appendChild(ans3_3);
-    })){}
+                if(ans2_2.addEventListener("click",function(){
+                    alert("You answered correctly");
+                    question2.style.display="none";
+                    ans1_2.style.display = "none";
+                    ans2_2.style.display = "none";
+                    ans3_2.style.display = "none";
+                    document.body.appendChild(question3);
+                    document.body.appendChild(list3);
+                    document.body.appendChild(ans1_3);
+                    document.body.appendChild(ans2_3);
+                    document.body.appendChild(ans3_3);
+                })){}
 
-        if(ans3_3.addEventListener("click",function(){
-            alert("You have completed the quiz!");
-            question3.style.display="none";
-            ans1_3.style.display = "none";
-            ans2_3.style.display = "none";
-            ans3_3.style.display = "none";
+                    if(ans3_3.addEventListener("click",function(){
+                        alert("You have completed the quiz!");
+                        question3.style.display="none";
+                        ans1_3.style.display = "none";
+                        ans2_3.style.display = "none";
+                        ans3_3.style.display = "none";
            
-        })){}
+                    })){}
 
-}))
+        }))
 
-{} else if (ans2.addEventListener("click", function(){
-    alert("You answered Incorrectly. Time will be deducted")
-    }))
-        {}else if(ans3.addEventListener("click", function(){
-        alert("You answered Incorrectly. Time will be deducted")
-        })){}else if(ans1_2.addEventListener("click", function(){
-            alert("You answered Incorrectly. Time will be deducted")
-            })){}else if(ans3_2.addEventListener("click", function(){
+            {} else if (ans2.addEventListener("click", function(){
                 alert("You answered Incorrectly. Time will be deducted")
-                })){}else if(ans1_3.addEventListener("click", function(){
+                }))
+                {}else if(ans3.addEventListener("click", function(){
                     alert("You answered Incorrectly. Time will be deducted")
-                    })){}else(ans2_3.addEventListener("click", function(){
-                        alert("You answered Incorrectly. Time will be deducted")
+                }))
+                    {}else if(ans1_2.addEventListener("click", function(){
+                         alert("You answered Incorrectly. Time will be deducted")
+                    }))
+                        {}else if(ans3_2.addEventListener("click", function(){
+                            alert("You answered Incorrectly. Time will be deducted")
                         }))
+                            {}else if(ans1_3.addEventListener("click", function(){
+                                alert("You answered Incorrectly. Time will be deducted")
+                            }))
+                                {}else (ans2_3.addEventListener("click", function(){
+                                    alert("You answered Incorrectly. Time will be deducted")
+                                }))
 
-
+    
+                               
+ })
