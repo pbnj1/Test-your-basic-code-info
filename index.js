@@ -47,9 +47,6 @@ ans2_2.innerHTML = "francis"
 ans3_2.innerHTML = "ruby"
 
 
-
-
-
 //made trial question 3
 let question3 = document.createElement("h1");
 question3.innerHTML = "What is your favorite food?";
@@ -65,7 +62,8 @@ ans1_3.innerHTML = "pizza"
 ans2_3.innerHTML = "PBNJ"
 ans3_3.innerHTML = "broccoli raab"
 
-
+//made a statement giving the score and the users initials
+let scoreTally = document.createElement("h1")
 
 
 //made an event for the button click
@@ -103,6 +101,7 @@ btn.addEventListener("click", function(){
             ans3_3.style.display = "none";
             timer.style.display = "none";
             clearInterval(timerInterval);
+
 
            
            
@@ -160,10 +159,12 @@ btn.addEventListener("click", function(){
                 })){}
                         
                     if(ans3_3.addEventListener("click",function(){
-                    alert("You have completed the quiz!");
-                        
-               
-                       
+                    // alert("You have completed the quiz!");
+                    let score = counter;
+                    alert("you have finished the game with " + score + "seconds left!");
+                        var saveScore = prompt("type your initials");
+                        scoreTally.innerHTML = saveScore + " 's new score is " + score;
+                        document.body.appendChild(scoreTally);
                        
                         
            
