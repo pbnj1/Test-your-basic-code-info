@@ -15,8 +15,6 @@ document.body.appendChild(btn);
 
 // made a timer below
 let timer = document.createElement("h2");
-var counter = 30;
-timer.innerHTML = "You have " + counter + " seconds left";
 
 //made trial question 1
 let question1 = document.createElement("h1");
@@ -68,11 +66,6 @@ ans2_3.innerHTML = "PBNJ"
 ans3_3.innerHTML = "broccoli raab"
 
 
-// var startTimer = setInterval(() => {
-    
-//     counter--;
-//   }, interval); 
-
 
 
 //made an event for the button click
@@ -85,32 +78,59 @@ btn.addEventListener("click", function(){
 //pulls up the question and answers
     //starting to work on counter function
 
+    var counter = 30;
     
     function setTime() {
         // Sets interval in variable
         var timerInterval = setInterval(function() {
-          counter--;
+           
+            counter--;
          
+          timer.innerHTML = "You have " + counter + " seconds left";
+          
       
-          if(counter === 0) {
+          if(counter <= 0) {
             // Stops execution of action at set interval
             clearInterval(timerInterval);
             // Calls function to create and append image
-            sendMessage();
-          }
+            lostMsg();
+
+          }else if(ans3_3.addEventListener("click",function(){
+            
+            question3.style.display="none";
+            ans1_3.style.display = "none";
+            ans2_3.style.display = "none";
+            ans3_3.style.display = "none";
+            timer.style.display = "none";
+            clearInterval(timerInterval);
+
+           
+           
+            
+
+        })){}
       
         }, 1000);
-      }
-     
+      
+    }
+            function lostMsg() {
+            alert("you have lost the game");
+            document.body.style.display ="none"
+            
+           
+        }
+       
+            
 
-     
-    document.body.appendChild(question1);
-    document.body.appendChild(list1);
-    document.body.appendChild(ans1);
-    document.body.appendChild(ans2);
-    document.body.appendChild(ans3);
+       
+      setTime();
+        document.body.appendChild(question1);
+        document.body.appendChild(list1);
+        document.body.appendChild(ans1);
+        document.body.appendChild(ans2);
+        document.body.appendChild(ans3);
 
-
+       
 
 
 //applies an if/else to the answerss
@@ -138,37 +158,45 @@ btn.addEventListener("click", function(){
                     document.body.appendChild(ans2_3);
                     document.body.appendChild(ans3_3);
                 })){}
-
+                        
                     if(ans3_3.addEventListener("click",function(){
-                        alert("You have completed the quiz!");
-                        question3.style.display="none";
-                        ans1_3.style.display = "none";
-                        ans2_3.style.display = "none";
-                        ans3_3.style.display = "none";
+                    alert("You have completed the quiz!");
+                        
+               
+                       
+                       
+                        
            
-                    })){}
-
+                     })){}
+                    
         }))
 
             {} else if (ans2.addEventListener("click", function(){
-                alert("You answered Incorrectly. Time will be deducted")
+                counter = counter -5; 
+                alert("You answered Incorrectly. Time will be deducted by 5 seconds")
+        
                 }))
                 {}else if(ans3.addEventListener("click", function(){
-                    alert("You answered Incorrectly. Time will be deducted")
+                    counter = counter -5; 
+                    alert("You answered Incorrectly. Time will be deducted by 5 seconds")
                 }))
                     {}else if(ans1_2.addEventListener("click", function(){
-                         alert("You answered Incorrectly. Time will be deducted")
+                        counter = counter -5; 
+                         alert("You answered Incorrectly. Time will be deducted by 5 seconds")
                     }))
                         {}else if(ans3_2.addEventListener("click", function(){
-                            alert("You answered Incorrectly. Time will be deducted")
+                            counter = counter -5; 
+                            alert("You answered Incorrectly. Time will be deducted by 5 seconds")
                         }))
                             {}else if(ans1_3.addEventListener("click", function(){
-                                alert("You answered Incorrectly. Time will be deducted")
+                                counter = counter -5; 
+                                alert("You answered Incorrectly. Time will be deducted by 5 seconds")
                             }))
                                 {}else (ans2_3.addEventListener("click", function(){
-                                    alert("You answered Incorrectly. Time will be deducted")
+                                    counter = counter -5; 
+                                    alert("You answered Incorrectly. Time will be deducted by 5 seconds")
                                 }))
 
-    
+     
                                
  })
