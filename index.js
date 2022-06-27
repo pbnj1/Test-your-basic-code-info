@@ -1,9 +1,27 @@
+//Score card info...
+var initialsInput = document.querySelector("#initials-text");
+var scoreCardForm = document.getElementById("score-form");
+var scoreCardText = document.getElementById("score-card");
+var initialsList = document.getElementById("initial-list");
+var scoreInfo = document.getElementsByClassName("score-info");
+var viewScore = document.getElementById("view");
+
+// var viewScore = document.createElement("button");
+// viewScore.innerHTML = "View Your Scores";
+
+var again = document.createElement("button");
+again.innerHTML = "Play Again?"
+
+viewScore.style.display = "none";
+scoreCardForm.style.display ="none";
+scoreCardText.style.display ="none";
+initialsList.style.display ="none";
+var scores = [];
+
+// document.getElementById("score-card").style.display ="none";
+// document.getElementById("score-form").style.display ="none";
+
 //added the title
-
-document.getElementById("score-card").style.display ="none";
-document.getElementById("score-form").style.display ="none";
-
-
 let codeTitle =document.getElementById("start-caption");
 codeTitle.innerHTML = "Coding Quiz Challenge";
 document.body.appendChild(codeTitle);
@@ -172,6 +190,66 @@ btn.addEventListener("click", function(){
                     alert("you have finished the game with " + score + "seconds left!");
                     document.getElementById("score-card").style.display ="block";
                     document.getElementById("score-form").style.display ="block";
+                    document.getElementById("view").style.display ="block";
+                    // document.body.appendChild(viewScore);
+                    document.body.appendChild(again);
+
+                    // function renderScores(){
+                        
+                    // }
+                    
+                    function init(){
+
+                        var storedScores = JSON.parse(localStorage.getItem("scores"));
+                    
+                        if (storedScores !== null){
+                            scores = storedScores;
+                        }
+                        
+                        renderScores();
+                    }
+
+
+
+                    function storeScore(){
+                       
+                        localStorage.setItem("scores", JSON.stringify(scores));
+                        }
+                      
+                            scoreCardForm.addEventListener("submit", function(event){
+                            event.preventDefault();
+                       
+                            var scoreText = initialsInput.value.trim();
+                        
+                            if(scoreText === ""){
+                            return;
+                            }
+                       
+                            scores.push(scoreText);
+                            initialsInput.value = "";
+                       
+                        
+                            storeScore();
+                       
+                            renderScores();
+                      });
+                      
+
+
+                    viewScore.addEventListener("click", function(event){
+                        var scoreslist = JSON.parse(localStorage.getItem("scores"));
+                        initialsList.style.display ="block";
+                        document.getElementById("score-card").style.display ="none";
+                        document.getElementById("score-form").style.display ="none";
+                        document.querySelector(".score-info").innerHTML = scoreslist + " with " + counter + " seconds remaining.";
+                        document.getElementById("view").style.display ="none"
+                    })
+                    again.addEventListener("click", function(event){
+                        location.reload();
+                    })
+
+            
+
                     // document.body.appendChild(scoreCard);
                     // document.body.appendChild(scoreForm);
                     // document.body.scoreForm.appendChild(scoreLabel);
@@ -238,3 +316,6 @@ btn.addEventListener("click", function(){
                                     alert("You answered Incorrectly. Time will be deducted by 5 seconds")
                                 }))
 })
+
+
+init();
