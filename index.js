@@ -1,4 +1,9 @@
 //added the title
+
+document.getElementById("score-card").style.display ="none";
+document.getElementById("score-form").style.display ="none";
+
+
 let codeTitle =document.getElementById("start-caption");
 codeTitle.innerHTML = "Coding Quiz Challenge";
 document.body.appendChild(codeTitle);
@@ -12,6 +17,15 @@ document.body.appendChild(codeInstr);
 let btn = document.createElement("button");
 btn.innerHTML = "Start Quiz";
 document.body.appendChild(btn);
+
+
+//made score card
+let scoreCard = document.createElement("h1");
+scoreCard.innerHTML = "Score Card";
+let scoreForm = document.createElement("form");
+let scoreLabel = document.createElement("label");
+// let card = document.getElementById("score-card");
+// let form = document.getElementById("score-text");
 
 // made a timer below
 let timer = document.createElement("h2");
@@ -53,19 +67,21 @@ question3.innerHTML = "What is your favorite food?";
 
 
 //made an ordered list with trial answers 
-let list3 = document.createElement("ol")
-let ans1_3 = document.createElement("li")
-let ans2_3 = document.createElement("li")
-let ans3_3 = document.createElement("li")
+let list3 = document.createElement("ol");
+let ans1_3 = document.createElement("li");
+let ans2_3 = document.createElement("li");
+let ans3_3 = document.createElement("li");
 
-ans1_3.innerHTML = "pizza"
-ans2_3.innerHTML = "PBNJ"
-ans3_3.innerHTML = "broccoli raab"
+ans1_3.innerHTML = "pizza";
+ans2_3.innerHTML = "PBNJ";
+ans3_3.innerHTML = "broccoli raab";
+
+
 
 //made a statement giving the score and the users initials
-let scoreTally = document.createElement("h1")
-
-
+let scoreTally = document.createElement("h1");
+// let scoreRecord = document.createElement("h1");
+// scoreRecord.textContent="dd";
 //made an event for the button click
 btn.addEventListener("click", function(){
 //makes the title screen dissapear
@@ -73,6 +89,7 @@ btn.addEventListener("click", function(){
     codeInstr.style.display = "none";
     btn.style.display = "none";
     document.body.appendChild(timer);
+    // document.body.appendChild(scoreRecord);
 //pulls up the question and answers
     //starting to work on counter function
 
@@ -100,13 +117,9 @@ btn.addEventListener("click", function(){
             ans2_3.style.display = "none";
             ans3_3.style.display = "none";
             timer.style.display = "none";
-            clearInterval(timerInterval);
+            clearInterval(timerInterval);  
 
-
-           
-           
             
-
         })){}
       
         }, 1000);
@@ -115,23 +128,18 @@ btn.addEventListener("click", function(){
             function lostMsg() {
             alert("you have lost the game");
             document.body.style.display ="none"
-            
-           
+                  
         }
        
-            
+             
+              setTime();
+                document.body.appendChild(question1);
+                document.body.appendChild(list1);
+                document.body.appendChild(ans1);
+                document.body.appendChild(ans2);
+                document.body.appendChild(ans3);
 
        
-      setTime();
-        document.body.appendChild(question1);
-        document.body.appendChild(list1);
-        document.body.appendChild(ans1);
-        document.body.appendChild(ans2);
-        document.body.appendChild(ans3);
-
-       
-
-
 //applies an if/else to the answerss
         if (ans1.addEventListener("click", function(){
             alert("You answered correctly");
@@ -160,14 +168,47 @@ btn.addEventListener("click", function(){
                         
                     if(ans3_3.addEventListener("click",function(){
                     // alert("You have completed the quiz!");
-                    let score = counter;
+                    var score = counter;
                     alert("you have finished the game with " + score + "seconds left!");
-                        var saveScore = prompt("type your initials");
-                        scoreTally.innerHTML = saveScore + " 's new score is " + score;
-                        document.body.appendChild(scoreTally);
+                    document.getElementById("score-card").style.display ="block";
+                    document.getElementById("score-form").style.display ="block";
+                    // document.body.appendChild(scoreCard);
+                    // document.body.appendChild(scoreForm);
+                    // document.body.scoreForm.appendChild(scoreLabel);
+
+                    // let scoreForm = document.createElement("form");
+                    // let scoreLabel = document.createElement("label")
+
+                    
+                        // function finalScore(){
+                            
+                        //     var lastScore ={
+                        //         scoreRecord: scoreRecord.value,
+                        //         score: score.value
+                        //     };
+                            
+                        //     localStorage.setItem("lastScore", JSON.stringify(lastScore));
+
+                        // }
+
+                        // function renderScore(){
+
+                        //     var retrieveGrade = JSON.parse(localStorage.getItem("lastScore"));
+
+                        //     if(lastScore !== null){
+
+                        //     }
+                        // }
+
+
+
+
+
+                    // alert("you have finished the game with " + score + "seconds left!");
+                    //     var saveScore = prompt("type your initials");
+                    //     scoreTally.innerHTML = saveScore + " 's new score is " + score;
+                    //     document.body.appendChild(scoreTally);
                        
-                        
-           
                      })){}
                     
         }))
@@ -175,7 +216,6 @@ btn.addEventListener("click", function(){
             {} else if (ans2.addEventListener("click", function(){
                 counter = counter -5; 
                 alert("You answered Incorrectly. Time will be deducted by 5 seconds")
-        
                 }))
                 {}else if(ans3.addEventListener("click", function(){
                     counter = counter -5; 
@@ -184,7 +224,7 @@ btn.addEventListener("click", function(){
                     {}else if(ans1_2.addEventListener("click", function(){
                         counter = counter -5; 
                          alert("You answered Incorrectly. Time will be deducted by 5 seconds")
-                    }))
+                         }))
                         {}else if(ans3_2.addEventListener("click", function(){
                             counter = counter -5; 
                             alert("You answered Incorrectly. Time will be deducted by 5 seconds")
@@ -197,7 +237,4 @@ btn.addEventListener("click", function(){
                                     counter = counter -5; 
                                     alert("You answered Incorrectly. Time will be deducted by 5 seconds")
                                 }))
-
-     
-                               
- })
+})
