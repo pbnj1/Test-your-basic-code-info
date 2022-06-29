@@ -1,5 +1,5 @@
 document.body.setAttribute("style", "background: #47B5FF")
-//Score card info...
+
 var initialsInput = document.querySelector("#initials-text");
 var scoreCardForm = document.getElementById("score-form");
 var scoreCardText = document.getElementById("score-card");
@@ -21,24 +21,19 @@ var scores = [];
 
 
 
-
-
-//added the title
 let codeTitle =document.getElementById("start-caption");
 codeTitle.innerHTML = "Coding Quiz Challenge";
 
 
-//added paragraph text
 let codeInstr = document.getElementById("start-p");
-codeInstr.innerHTML = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your scoretime by ten seconds!";
+codeInstr.innerHTML = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your scoretime by five seconds!";
 codeInstr.style.paddingLeft = "100px";
-// document.body.appendChild(codeInstr);
 
-//made a button below
+
 let btn = document.createElement("button");
 btn.innerHTML = "Start Quiz";
 btn.setAttribute("style", " height:50px; width:100px; font-size: 17px; border-radius: 20px; background: #DFF6FF")
-// document.body.appendChild(btn);
+
 
 let titleBox = document.createElement("div");
 document.body.appendChild(titleBox);
@@ -48,27 +43,20 @@ titleBox.setAttribute("style", "display: flex; flex-wrap: wrap; flex-direction: 
 titleBox.appendChild(codeTitle);
 titleBox.appendChild(codeInstr);
 titleBox.appendChild(btn);
-// document.body.append(titleBox);
 
 
-//made score card
 let scoreCard = document.createElement("h1");
 scoreCard.innerHTML = "Score Card";
 let scoreForm = document.createElement("form");
 let scoreLabel = document.createElement("label");
 
 
-// made a timer below
 let timer = document.createElement("h2");
 
-//made trial question 1
 let question1 = document.createElement("h1");
 question1.innerHTML = "What is Javascript?";
 
 
-
-
-//made an ordered list with trial 1 answers 
 let list1 = document.createElement("ol")
 let ans1 = document.createElement("li")
 let ans2 = document.createElement("li")
@@ -88,12 +76,10 @@ QaBox1.setAttribute("class", "Qabox")
 QaBox1.setAttribute("style", "display: flex; flex-wrap: wrap; flex-direction: column; justify-content: center; align-items: center;")
 
 
-
-//made trial question 2
 let question2 = document.createElement("h1");
 question2.innerHTML = "What is HTML?";
 
-//made an ordered list with trial answers 
+
 let list2 = document.createElement("ol")
 let ans1_2 = document.createElement("li")
 let ans2_2= document.createElement("li")
@@ -112,13 +98,10 @@ QaBox2.setAttribute("class", "Qabox2")
 QaBox2.setAttribute("style", "display: flex; flex-wrap: wrap; flex-direction: column; justify-content: center; align-items: center;")
 
 
-
-//made trial question 3
 let question3 = document.createElement("h1");
 question3.innerHTML = "What is CSS?";
 
 
-//made an ordered list with trial answers 
 let list3 = document.createElement("ol");
 let ans1_3 = document.createElement("li");
 let ans2_3 = document.createElement("li");
@@ -136,25 +119,21 @@ let QaBox3 = document.createElement("div");
 QaBox3.setAttribute("class", "Qabox3")
 QaBox3.setAttribute("style", "display: flex; flex-wrap: wrap; flex-direction: column; justify-content: center; align-items: center;")
 
-//made a statement giving the score and the users initials
 let scoreTally = document.createElement("h1");
 
 
-//made an event for the button click
 btn.addEventListener("click", function(){
-//makes the title screen dissapear
+
     titleBox.style.display = "none";
 
     btn.style.display = "none";
     document.body.appendChild(timer);
  
-//pulls up the question and answers
-    //starting to work on counter function
 
     var counter = 30;
     
     function setTime() {
-        // Sets interval in variable
+       
         var timerInterval = setInterval(function() {
            
             counter--;
@@ -163,9 +142,9 @@ btn.addEventListener("click", function(){
           
       
           if(counter <= 0) {
-            // Stops execution of action at set interval
+         
             clearInterval(timerInterval);
-            // Calls function to create and append image
+          
             lostMsg();
 
           }else if(ans3_3.addEventListener("click",function(){
@@ -201,7 +180,7 @@ btn.addEventListener("click", function(){
                 QaBox1.appendChild(ans3);
 
        
-//applies an if/else to the answerss
+
         if (ans1.addEventListener("click", function(){
             alert("You answered correctly");
             QaBox1.style.display ="none"
