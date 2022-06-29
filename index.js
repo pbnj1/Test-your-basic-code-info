@@ -1,37 +1,32 @@
+document.body.setAttribute("style", "background: #47B5FF")
 //Score card info...
 var initialsInput = document.querySelector("#initials-text");
 var scoreCardForm = document.getElementById("score-form");
 var scoreCardText = document.getElementById("score-card");
 var initialsList = document.getElementById("initial-list");
 var scoreInfo = document.getElementsByClassName("score-info");
-// var viewScore = document.getElementById("view");
 
-// var viewScore = document.createElement("button");
-// viewScore.innerHTML = "View Your Scores";
 var yourLastScore = document.createElement("button");
 yourLastScore.innerHTML = "Your Last Score"
 
 var again = document.createElement("button");
 again.innerHTML = "Play Again?"
-again.setAttribute("style", " height:50px; width:100px; font-size: 17px; border-radius: 20px; background: lightblue")
-yourLastScore.setAttribute("style", " margin-left: 20px;height:50px; width:100px; font-size: 17px; border-radius: 20px; background: lightblue")
-// viewScore.style.display = "none";
+again.setAttribute("style", " height:50px; width:100px; font-size: 17px; border-radius: 20px; background: #DFF6FF")
+yourLastScore.setAttribute("style", " margin-left: 20px;height:50px; width:100px; font-size: 17px; border-radius: 20px; background: #DFF6FF")
+
 scoreCardForm.style.display ="none";
 scoreCardText.style.display ="none";
 initialsList.style.display ="none";
 var scores = [];
 
-// document.getElementById("score-card").style.display ="none";
-// document.getElementById("score-form").style.display ="none";
 
-//created a wrapper for the title information
+
 
 
 //added the title
 let codeTitle =document.getElementById("start-caption");
 codeTitle.innerHTML = "Coding Quiz Challenge";
-// codeTitle.style.paddingLeft = "550px";
-// document.body.appendChild(codeTitle);
+
 
 //added paragraph text
 let codeInstr = document.getElementById("start-p");
@@ -42,7 +37,7 @@ codeInstr.style.paddingLeft = "100px";
 //made a button below
 let btn = document.createElement("button");
 btn.innerHTML = "Start Quiz";
-btn.setAttribute("style", " height:50px; width:100px; font-size: 17px; border-radius: 20px; background: lightblue")
+btn.setAttribute("style", " height:50px; width:100px; font-size: 17px; border-radius: 20px; background: #DFF6FF")
 // document.body.appendChild(btn);
 
 let titleBox = document.createElement("div");
@@ -61,8 +56,7 @@ let scoreCard = document.createElement("h1");
 scoreCard.innerHTML = "Score Card";
 let scoreForm = document.createElement("form");
 let scoreLabel = document.createElement("label");
-// let card = document.getElementById("score-card");
-// let form = document.getElementById("score-text");
+
 
 // made a timer below
 let timer = document.createElement("h2");
@@ -85,9 +79,9 @@ ans1.innerHTML = "A programming language"
 ans2.innerHTML = "The recipe for coffee"
 ans3.innerHTML = "The way you plan vacation stops"
 
-ans1.setAttribute("style", "margin: 20px; padding: 10px; font-size: 1.5rem; list-style: none; border: solid; border-width: 1px; border-radius: 20px; background: lightblue")
-ans2.setAttribute("style", "margin: 20px; padding: 10px; font-size: 1.5rem; list-style: none; border: solid; border-width: 1px; border-radius: 20px; background: lightblue")
-ans3.setAttribute("style", "margin: 20px; padding: 10px; font-size: 1.5rem; list-style: none; border: solid; border-width: 1px; border-radius: 20px; background: lightblue")
+ans1.setAttribute("style", "margin: 20px; padding: 10px; font-size: 1.5rem; list-style: none; border: solid; border-width: 1px; border-radius: 20px; background: #DFF6FF")
+ans2.setAttribute("style", "margin: 20px; padding: 10px; font-size: 1.5rem; list-style: none; border: solid; border-width: 1px; border-radius: 20px; background: #DFF6FF")
+ans3.setAttribute("style", "margin: 20px; padding: 10px; font-size: 1.5rem; list-style: none; border: solid; border-width: 1px; border-radius: 20px; background: #DFF6FF")
 
 let QaBox1 = document.createElement("div");
 QaBox1.setAttribute("class", "Qabox")
@@ -109,9 +103,9 @@ ans1_2.innerHTML = "A random assortment of letters"
 ans2_2.innerHTML = "The framework to construct web applications"
 ans3_2.innerHTML = "High Training Men's League"
 
-ans1_2.setAttribute("style", "margin: 20px; padding: 10px; font-size: 1.5rem; list-style: none; border: solid; border-width: 1px; border-radius: 20px; background: lightblue")
-ans2_2.setAttribute("style", "margin: 20px; padding: 10px; font-size: 1.5rem; list-style: none; border: solid; border-width: 1px; border-radius: 20px; background: lightblue")
-ans3_2.setAttribute("style", "margin: 20px; padding: 10px; font-size: 1.5rem; list-style: none; border: solid; border-width: 1px; border-radius: 20px; background: lightblue")
+ans1_2.setAttribute("style", "margin: 20px; padding: 10px; font-size: 1.5rem; list-style: none; border: solid; border-width: 1px; border-radius: 20px; background: #DFF6FF")
+ans2_2.setAttribute("style", "margin: 20px; padding: 10px; font-size: 1.5rem; list-style: none; border: solid; border-width: 1px; border-radius: 20px; background: #DFF6FF")
+ans3_2.setAttribute("style", "margin: 20px; padding: 10px; font-size: 1.5rem; list-style: none; border: solid; border-width: 1px; border-radius: 20px; background: #DFF6FF")
 
 let QaBox2 = document.createElement("div");
 QaBox2.setAttribute("class", "Qabox2")
@@ -134,9 +128,9 @@ ans1_3.innerHTML = "Custom Selected Showers";
 ans2_3.innerHTML = "A spin off of the show CSI";
 ans3_3.innerHTML = "A rule based language used to style HTML coding  ";
 
-ans1_3.setAttribute("style", "margin: 20px; padding: 10px; font-size: 1.5rem; list-style: none; border: solid; border-width: 1px; border-radius: 20px; background: lightblue")
-ans2_3.setAttribute("style", "margin: 20px; padding: 10px; font-size: 1.5rem; list-style: none; border: solid; border-width: 1px; border-radius: 20px; background: lightblue")
-ans3_3.setAttribute("style", "margin: 20px; padding: 10px; font-size: 1.5rem; list-style: none; border: solid; border-width: 1px; border-radius: 20px; background: lightblue")
+ans1_3.setAttribute("style", "margin: 20px; padding: 10px; font-size: 1.5rem; list-style: none; border: solid; border-width: 1px; border-radius: 20px; background: #DFF6FF")
+ans2_3.setAttribute("style", "margin: 20px; padding: 10px; font-size: 1.5rem; list-style: none; border: solid; border-width: 1px; border-radius: 20px; background: #DFF6FF")
+ans3_3.setAttribute("style", "margin: 20px; padding: 10px; font-size: 1.5rem; list-style: none; border: solid; border-width: 1px; border-radius: 20px; background: #DFF6FF")
 
 let QaBox3 = document.createElement("div");
 QaBox3.setAttribute("class", "Qabox3")
@@ -144,17 +138,16 @@ QaBox3.setAttribute("style", "display: flex; flex-wrap: wrap; flex-direction: co
 
 //made a statement giving the score and the users initials
 let scoreTally = document.createElement("h1");
-// let scoreRecord = document.createElement("h1");
-// scoreRecord.textContent="dd";
+
+
 //made an event for the button click
 btn.addEventListener("click", function(){
 //makes the title screen dissapear
     titleBox.style.display = "none";
-    // codeTitle.style.display = "none";
-    // codeInstr.style.display = "none";
+
     btn.style.display = "none";
     document.body.appendChild(timer);
-    // document.body.appendChild(scoreRecord);
+ 
 //pulls up the question and answers
     //starting to work on counter function
 
@@ -212,15 +205,7 @@ btn.addEventListener("click", function(){
         if (ans1.addEventListener("click", function(){
             alert("You answered correctly");
             QaBox1.style.display ="none"
-            // question1.style.display ="none";
-            // ans1.style.display = "none";
-            // ans2.style.display = "none";
-            // ans3.style.display = "none";
-            // document.body.appendChild(question2);
-            // document.body.appendChild(list2);
-            // document.body.appendChild(ans1_2);
-            // document.body.appendChild(ans2_2);
-            // document.body.appendChild(ans3_2);
+           
             document.body.appendChild(QaBox2);
             QaBox2.appendChild(question2);
             QaBox2.appendChild(list2);
@@ -231,15 +216,7 @@ btn.addEventListener("click", function(){
                 if(ans2_2.addEventListener("click",function(){
                     alert("You answered correctly");
                     QaBox2.style.display ="none"
-                    // question2.style.display="none";
-                    // ans1_2.style.display = "none";
-                    // ans2_2.style.display = "none";
-                    // ans3_2.style.display = "none";
-                    // document.body.appendChild(question3);
-                    // document.body.appendChild(list3);
-                    // document.body.appendChild(ans1_3);
-                    // document.body.appendChild(ans2_3);
-                    // document.body.appendChild(ans3_3);
+                
                     document.body.appendChild(QaBox3);
                     QaBox3.appendChild(question3);
                     QaBox3.appendChild(list3);
@@ -249,20 +226,19 @@ btn.addEventListener("click", function(){
                 })){}
                         
                     if(ans3_3.addEventListener("click",function(){
-                    // alert("You have completed the quiz!");
+                  
                     var score = counter;
                     alert("you have finished the game with " + score + "seconds left!");
+                    
+                  
+
                     document.getElementById("score-card").style.display ="block";
                     document.getElementById("score-form").style.display ="block";
-                    // document.getElementById("view").style.display ="block";
-                    // document.body.appendChild(viewScore);
+                    
                     document.body.appendChild(again);
                     document.body.appendChild(yourLastScore);
 
-                    // function renderScores(){
-                        
-                    // }
-                    
+                
                     function init(){
 
                         var storedScores = JSON.parse(localStorage.getItem("scores"));
@@ -280,7 +256,7 @@ btn.addEventListener("click", function(){
                        
                         localStorage.setItem("scores", JSON.stringify(scores));
                         }
-                      
+                            
                             scoreCardForm.addEventListener("submit", function(event){
                             event.preventDefault();
                        
@@ -306,53 +282,17 @@ btn.addEventListener("click", function(){
                         initialsList.style.display ="block";
                         document.getElementById("score-card").style.display ="none";
                         document.getElementById("score-form").style.display ="none";
-                        document.querySelector(".score-info").innerHTML = scoreslist + " with " + counter + " seconds remaining.";
-                        // document.getElementById("view").style.display ="none"
+                        let scoreReport = document.querySelector(".score-info").innerHTML = scoreslist + " with " + counter + " seconds remaining.";
                         yourLastScore.style.display = "none";
                     })
                     again.addEventListener("click", function(event){
                         location.reload();
                     })
 
-            
-
-                    // document.body.appendChild(scoreCard);
-                    // document.body.appendChild(scoreForm);
-                    // document.body.scoreForm.appendChild(scoreLabel);
-
-                    // let scoreForm = document.createElement("form");
-                    // let scoreLabel = document.createElement("label")
-
-                    
-                        // function finalScore(){
-                            
-                        //     var lastScore ={
-                        //         scoreRecord: scoreRecord.value,
-                        //         score: score.value
-                        //     };
-                            
-                        //     localStorage.setItem("lastScore", JSON.stringify(lastScore));
-
-                        // }
-
-                        // function renderScore(){
-
-                        //     var retrieveGrade = JSON.parse(localStorage.getItem("lastScore"));
-
-                        //     if(lastScore !== null){
-
-                        //     }
-                        // }
+        
 
 
-
-
-
-                    // alert("you have finished the game with " + score + "seconds left!");
-                    //     var saveScore = prompt("type your initials");
-                    //     scoreTally.innerHTML = saveScore + " 's new score is " + score;
-                    //     document.body.appendChild(scoreTally);
-                       
+                 
                      })){}
                     
         }))
