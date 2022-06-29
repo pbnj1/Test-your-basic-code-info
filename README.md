@@ -6,7 +6,8 @@ If you decide to participate you will have several multiple choice answers and t
 
 You will have your time reduced if you get an incorrect answer.
 
-<img width="1268" alt="Screen Shot 2022-06-29 at 9 12 34 AM" src="https://user-images.githubusercontent.com/105159702/176444785-9a3da2c5-04c1-41c4-b2e9-149e7ab173d3.png">
+<img width="1365" alt="Screen Shot 2022-06-29 at 9 17 27 AM" src="https://user-images.githubusercontent.com/105159702/176445738-eed9a692-ee40-4e9d-97f4-b8440173b4a5.png">
+
 Above is an image of the start screen
 
 
